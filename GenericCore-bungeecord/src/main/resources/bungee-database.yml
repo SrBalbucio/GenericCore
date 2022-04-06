@@ -1,0 +1,38 @@
+#Configurações de Database - Atente-se aos detalhes
+
+#-----------------------------------------------------------------------------------------------------------------------
+#Database Primário
+
+#Tipos disponíveis: MySQL, MongoDB, Redis(JEDIS), Firebase, YML, JSON
+database: "Redis"
+#Configuração do database (configure apenas o que você selecionou)
+dbconfig:
+  redis:
+    url: "redis"
+    port: 6379
+  mysql:
+    database: "core"
+    user: "GenericUser"
+    password: "senhasegura"
+    url: "0.0.0.0"
+  mongodb:
+    url: "mongodb"
+#Proteção contra perda de dados
+#De quantos em quantos minutos deve ocorrer a resincronização do database?
+#Recomendado: 10m
+resync: 10 #Minutos
+#-----------------------------------------------------------------------------------------------------------------------
+
+#-----------------------------------------------------------------------------------------------------------------------
+#Database Secundário (Backup)
+#Lembrando que se você usa o YML ou JSON como database principal não será possível ativar o backup!
+
+#Tipos disponíveis: YML, JSON
+backup: "YML"
+#Configuração do Backup
+usos:
+  tempoexpirado: true #Quando o database primário demora muito para responder
+  falhas: true #Quando o database primário falha em alguma query
+  timeout: true #Quando o database primário cai ou não está conectado
+#-----------------------------------------------------------------------------------------------------------------------
+

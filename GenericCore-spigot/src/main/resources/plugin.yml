@@ -1,0 +1,6 @@
+name: GenericCore
+version: '${project.version}'
+main: generic.core.spigot.Spigot
+authors: [ Sr_Balbucio, JVzinn ]
+description: Core dos Plugins Generic
+website: htps://genericplugins.com

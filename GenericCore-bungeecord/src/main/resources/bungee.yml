@@ -1,0 +1,4 @@
+name: GenericCore
+version: '${project.version}'
+main: generic.core.bungee.Bungee
+description: Core Bungee dos Plugins Generic
