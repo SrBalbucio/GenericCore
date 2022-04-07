@@ -31,7 +31,7 @@ public class RedisDatabase implements Database{
 
     @Override
     public Integer getInt(String path) {
-        return jedis.;
+        return 0;
     }
 
     @Override

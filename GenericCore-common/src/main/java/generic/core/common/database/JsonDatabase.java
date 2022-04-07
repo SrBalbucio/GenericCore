@@ -53,4 +53,19 @@ public class JsonDatabase implements Database{
     public Object get(String path) {
         return db.get(path);
     }
+
+    @Override
+    public void setInteger(String path, Integer i) {
+        db.insertInt(path, i);
+    }
+
+    @Override
+    public void setString(String path, String i) {
+        db.insertString(path, i);
+    }
+
+    @Override
+    public void set(String path, Object i) {
+        db.insert(path, i);
+    }
 }

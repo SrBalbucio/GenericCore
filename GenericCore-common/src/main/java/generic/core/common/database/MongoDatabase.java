@@ -40,4 +40,19 @@ public class MongoDatabase implements Database {
     public Object get(String path) {
         return null;
     }
+
+    @Override
+    public void setInteger(String path, Integer i) {
+
+    }
+
+    @Override
+    public void setString(String path, String i) {
+
+    }
+
+    @Override
+    public void set(String path, Object i) {
+
+    }
 }

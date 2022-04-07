@@ -4,12 +4,13 @@ import generic.core.bungee.database.DatabaseManager;
 import generic.core.bungee.lib.language.Language;
 import generic.core.bungee.lib.language.LanguageManager;
 import generic.core.common.logger.CoreLogger;
+import generic.core.common.plugin.GenericPlugin;
 import net.md_5.bungee.api.plugin.Plugin;
 
 import java.util.logging.Level;
 
 
-public final class Bungee extends Plugin {
+public final class Bungee extends Plugin implements GenericPlugin{
 
     private static CoreLogger log = new CoreLogger(Bungee.class, "Core");
     private static Bungee instance;
@@ -43,5 +44,25 @@ public final class Bungee extends Plugin {
 
     public static void setInstance(Bungee instance) {
         Bungee.instance = instance;
+    }
+
+    @Override
+    public String getName() {
+        return "GenericCore";
+    }
+
+    @Override
+    public Class getMain() {
+        return this.getClass();
+    }
+
+    @Override
+    public Integer getVersion() {
+        return 1;
+    }
+
+    @Override
+    public GenericPlugin.PluginType getType() {
+            return GenericPlugin.PluginType.BUNGEE;
     }
 }
