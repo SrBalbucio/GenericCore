@@ -54,7 +54,7 @@ public enum DatabaseType {
     }, JSON{
         @Override
         public Database getConnection(String[] config) {
-            return null;
+            return new JsonDatabase(config);
         }
 
         @Override

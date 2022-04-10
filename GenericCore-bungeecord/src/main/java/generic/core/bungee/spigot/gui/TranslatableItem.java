@@ -1,11 +1,10 @@
 package generic.core.bungee.spigot.gui;
 
-import generic.core.bungee.lib.language.Translatable;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 
 import java.util.HashMap;
 
-public class TranslatableItem implements Item, Translatable {
+public class TranslatableItem implements Item {
     private Integer id;
     private Integer amount;
     private String name;
@@ -38,10 +37,5 @@ public class TranslatableItem implements Item, Translatable {
     @Override
     public String[] getLore() {
         return lore;
-    }
-
-    @Override
-    public HashMap<String, String> getDefault() {
-        return null;
     }
 }

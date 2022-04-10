@@ -1,5 +1,8 @@
 package generic.core.spigot.bungee;
 
+import generic.core.common.profile.profile.Profile;
+import generic.core.spigot.lib.gui.PagedMenu;
+import generic.core.spigot.lib.gui.ProfileStack;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -8,6 +11,7 @@ import org.bukkit.inventory.ItemStack;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.UUID;
 
 public class BungeeCreator {
 

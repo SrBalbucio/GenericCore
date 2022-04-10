@@ -15,7 +15,7 @@ public class JsonDatabase implements Database{
 
     @Override
     public void connect() {
-        db = new JsonConfig(new File("plugins/GenericCore/database/json-database.yml"));
+        db = new JsonConfig(new File("plugins/GenericCore/Database", "database.json"));
     }
 
     @Override

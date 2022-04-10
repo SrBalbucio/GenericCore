@@ -10,6 +10,7 @@ dbconfig:
   redis:
     url: "redis"
     port: 6379
+    senha: "P@55w0rd"
   mysql:
     database: "core"
     user: "GenericUser"

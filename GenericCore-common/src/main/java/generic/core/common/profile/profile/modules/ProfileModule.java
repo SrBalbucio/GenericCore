@@ -1,4 +1,4 @@
-package generic.core.bungee.profile.modules;
+package generic.core.common.profile.profile.modules;
 
 import generic.core.common.plugin.GenericPlugin;
 

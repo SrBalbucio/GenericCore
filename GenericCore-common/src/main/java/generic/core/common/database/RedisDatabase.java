@@ -1,26 +1,30 @@
 package generic.core.common.database;
 
+import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPooled;
 
 public class RedisDatabase implements Database{
 
-    private JedisPooled jedis;
+    private Jedis jedis;
     private String host;
+    private String password;
     private Integer port;
 
     public RedisDatabase(String[] config){
-        host = config[1];
-        port = Integer.parseInt(config[0]);
+        host = config[2];
+        port = Integer.parseInt(config[1]);
+        password = config[0];
     }
 
     @Override
     public void connect() {
-        jedis = new JedisPooled(host, port);
+        jedis = new Jedis(host, port);
+        jedis.auth(password);
     }
 
     @Override
     public void disconnect() {
-        jedis.getPool().destroy();
+        jedis.close();
         jedis = null;
     }
 

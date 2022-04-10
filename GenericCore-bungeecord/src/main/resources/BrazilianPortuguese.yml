@@ -1,0 +1,6 @@
+#Linguagem padrão - Não delete
+#
+#Algumas mensagens usam um padrão de construtor, fique atento para não fazer errado!
+language:
+  name: "Português Brasileiro"
+  prefix: "PT-BR"

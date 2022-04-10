@@ -18,7 +18,6 @@ public class JsonConfig implements Config{
 
     @Override
     public void load() {
-        createNew();
         try {
             FileInputStream fileInputStream = new FileInputStream(file);
             InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
@@ -120,6 +119,11 @@ public class JsonConfig implements Config{
     }
 
     @Override
+    public Config generate(File file) {
+        return new JsonConfig(file);
+    }
+
+    @Override
     public void save() {
         try {
             FileOutputStream outputStream = new FileOutputStream(file);
@@ -134,14 +138,17 @@ public class JsonConfig implements Config{
     private void createNew(){
         try {
             if (!file.exists()) {
-                File folder = new File(file.getPath());
+                File folder = new File(file.getParent());
                 if (!folder.exists()) {
                     folder.mkdir();
                 }
                 file.createNewFile();
+                json = new JSONObject();
+                save();
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
 }

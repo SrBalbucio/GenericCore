@@ -1,12 +1,13 @@
 package generic.core.bungee;
 
 import generic.core.bungee.database.DatabaseManager;
-import generic.core.bungee.lib.language.Language;
-import generic.core.bungee.lib.language.LanguageManager;
+import generic.core.bungee.lib.file.FileConfig;
+import generic.core.common.language.LanguageManager;
 import generic.core.common.logger.CoreLogger;
 import generic.core.common.plugin.GenericPlugin;
 import net.md_5.bungee.api.plugin.Plugin;
 
+import java.io.File;
 import java.util.logging.Level;
 
 
@@ -26,9 +27,10 @@ public final class Bungee extends Plugin implements GenericPlugin{
 
     @Override
     public void onLoad(){
-        lang = new LanguageManager();
+        lang = new LanguageManager(new File("plugins/GenericCore/Languages"), new FileConfig());
         database = new DatabaseManager(this);
     }
+
     @Override
     public void onDisable() {
         log.stop(Level.INFO, "O plugin foi desativado com sucesso!");

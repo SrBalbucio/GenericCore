@@ -26,6 +26,10 @@ public class FileConfig implements Config {
         createNew();
         load();
     }
+
+    public FileConfig(){
+
+    }
     public FileConfig(File file, InputStream resource){
         this.file = file;
         this.stream = resource;
@@ -141,6 +145,11 @@ public class FileConfig implements Config {
             paths.put(key, config.getSection(path).get(key));
         }
         return paths;
+    }
+
+    @Override
+    public Config generate(File file) {
+        return new FileConfig(file);
     }
 
     @Override

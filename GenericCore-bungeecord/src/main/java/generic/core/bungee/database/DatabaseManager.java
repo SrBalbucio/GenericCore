@@ -21,7 +21,7 @@ public class DatabaseManager {
 
     public DatabaseManager(Bungee bungee){
         this.bungee = bungee;
-        config = new FileConfig(new File("plugins/GenericCore", "bungee-database.yml"), bungee.getResourceAsStream("bungee-database.yml"));
+        config = new FileConfig(new File("plugins/GenericCore", "database.yml"), bungee.getResourceAsStream("database.yml"));
         Bungee.getCoreLogger().start(Level.INFO, "§bConfiguração do Database §acarregada com sucesso!");
         inited = true;
         try {

@@ -1,12 +1,11 @@
 package generic.core.bungee.spigot.gui;
 
-import generic.core.bungee.lib.language.Translatable;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class TranslatableInventory implements Inventory, Translatable {
+public class TranslatableInventory implements Inventory {
 
     private String title;
     private int size;
@@ -61,11 +60,6 @@ public class TranslatableInventory implements Inventory, Translatable {
         this.title = null;
         this.size = 0;
         this.itens = null;
-    }
-
-    @Override
-    public HashMap<String, String> getDefault() {
-        return null;
     }
 
     @Override

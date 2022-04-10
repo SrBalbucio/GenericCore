@@ -25,6 +25,7 @@ public class FileConfig implements Config {
         createNew();
         load();
     }
+    public FileConfig(){}
     public FileConfig(File file, InputStream stream){
         this.file = file;
         this.stream = stream;
@@ -47,7 +48,7 @@ public class FileConfig implements Config {
     private void createNew(){
         try {
             if (!file.exists()) {
-                File folder = new File(file.getPath());
+                File folder = new File(file.getParent());
                 if (!folder.exists()) {
                     folder.mkdir();
                 }
@@ -142,6 +143,11 @@ public class FileConfig implements Config {
             paths.put(key, config.getConfigurationSection(path).get(key));
         }
         return paths;
+    }
+
+    @Override
+    public Config generate(File file) {
+        return new FileConfig(file);
     }
 
     @Override
